@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\FileTypes">
+      <UniqueIdentifier>{22a10b83-8b9d-44f8-a903-ff889c33e671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FileTypes\FastWrite">
+      <UniqueIdentifier>{620ea35f-f69b-47cf-abf7-5b3a780fb87c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FileTypes\WinFileSlow">
+      <UniqueIdentifier>{193a3549-63e9-4d7f-bfce-c2ae64230539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FileTypes\Base">
+      <UniqueIdentifier>{48198406-8343-4ee7-9816-bc59854e12e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StaticFile">
+      <UniqueIdentifier>{fe2c4cfe-66d2-4383-9de8-6f4f30d857e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{f835c23d-77b6-4706-8886-2f2734a63df4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileTypes\FastWrite.cpp">
+      <Filter>Source Files\FileTypes\FastWrite</Filter>
+    </ClCompile>
+    <ClCompile Include="FileTypes\WinFileSlow.cpp">
+      <Filter>Source Files\FileTypes\WinFileSlow</Filter>
+    </ClCompile>
+    <ClCompile Include="FileTypes\FileBase.cpp">
+      <Filter>Source Files\FileTypes\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Source Files\StaticFile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileTypes\FastWrite.h">
+      <Filter>Source Files\FileTypes\FastWrite</Filter>
+    </ClInclude>
+    <ClInclude Include="FileTypes\WinFileSlow.h">
+      <Filter>Source Files\FileTypes\WinFileSlow</Filter>
+    </ClInclude>
+    <ClInclude Include="FileTypes\FileBase.h">
+      <Filter>Source Files\FileTypes\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>Source Files\StaticFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Util.h">
+      <Filter>Source Files\Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
