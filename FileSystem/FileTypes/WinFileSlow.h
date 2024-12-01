@@ -3,7 +3,7 @@
 
 #include "FileBase.h"
 
-namespace Azul
+namespace FileSystem
 {
 	class WinFileSlow : public FileBase
 	{

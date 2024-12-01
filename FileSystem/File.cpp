@@ -1,7 +1,5 @@
 #include "File.h"
 
-using namespace Azul;
-
 //default initialization
 FileBase* File::fBase = FileBase::GetInstance(FileType::DEFAULT);
 

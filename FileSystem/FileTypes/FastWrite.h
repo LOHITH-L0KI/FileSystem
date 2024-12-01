@@ -4,7 +4,7 @@
 #include <fstream>
 #include "FileBase.h"
 
-namespace Azul {
+namespace FileSystem {
 
 	struct FWHandler
 	{

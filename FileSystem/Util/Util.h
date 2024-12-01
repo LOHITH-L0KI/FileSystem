@@ -6,7 +6,7 @@
 #include <iostream>
 #include <assert.h>
 
-namespace Azul {
+namespace FileSystem {
 
 	typedef void* Handle;
 

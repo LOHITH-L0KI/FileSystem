@@ -2,7 +2,7 @@
 #include <fileapi.h>
 
 
-Error Azul::WinFileSlow::Open(Handle& fh, const char* const fileName, Mode mode) noexcept
+Error FileSystem::WinFileSlow::Open(Handle& fh, const char* const fileName, Mode mode) noexcept
 {
     Error res = Error::OPEN_FAIL;
 
@@ -28,7 +28,7 @@ Error Azul::WinFileSlow::Open(Handle& fh, const char* const fileName, Mode mode)
     return res;
 }
 
-Error Azul::WinFileSlow::Close(Handle& fh) noexcept{
+Error FileSystem::WinFileSlow::Close(Handle& fh) noexcept{
     Error res = Error::CLOSE_FAIL;
 
     if (IsHandleValid(fh) == false)
@@ -51,7 +51,7 @@ Error Azul::WinFileSlow::Close(Handle& fh) noexcept{
     return res;
 }
 
-Error Azul::WinFileSlow::Read(Handle handle, void* const buffer, const DWORD inSize) noexcept
+Error FileSystem::WinFileSlow::Read(Handle handle, void* const buffer, const DWORD inSize) noexcept
 {
     Error res = Error::READ_FAIL;
 
@@ -76,7 +76,7 @@ Error Azul::WinFileSlow::Read(Handle handle, void* const buffer, const DWORD inS
     return res;
 }
 
-Error Azul::WinFileSlow::Write(Handle handle, const void* const buffer, const DWORD inSize) noexcept
+Error FileSystem::WinFileSlow::Write(Handle handle, const void* const buffer, const DWORD inSize) noexcept
 {
     Error res = Error::WRITE_FAIL;
     
@@ -99,7 +99,7 @@ Error Azul::WinFileSlow::Write(Handle handle, const void* const buffer, const DW
     return res;
 }
 
-Error Azul::WinFileSlow::Seek(Handle handle, Position location, int offset) noexcept
+Error FileSystem::WinFileSlow::Seek(Handle handle, Position location, int offset) noexcept
 {
     Error res = Error::SEEK_FAIL;
 
@@ -124,7 +124,7 @@ Error Azul::WinFileSlow::Seek(Handle handle, Position location, int offset) noex
     return res;
 }
 
-Error Azul::WinFileSlow::Tell(Handle handle, DWORD& offset) noexcept
+Error FileSystem::WinFileSlow::Tell(Handle handle, DWORD& offset) noexcept
 {
     Error res = Error::TELL_FAIL;
     if (IsHandleValid(handle) == false)
@@ -148,7 +148,7 @@ Error Azul::WinFileSlow::Tell(Handle handle, DWORD& offset) noexcept
     return res;
 }
 
-Error Azul::WinFileSlow::Flush(Handle handle) noexcept
+Error FileSystem::WinFileSlow::Flush(Handle handle) noexcept
 {
     Error res = Error::FLUSH_FAIL;
     if (IsHandleValid(handle) == false)
@@ -169,7 +169,7 @@ Error Azul::WinFileSlow::Flush(Handle handle) noexcept
     return res;
 }
 
-bool Azul::WinFileSlow::IsHandleValid(Handle handle) noexcept
+bool FileSystem::WinFileSlow::IsHandleValid(Handle handle) noexcept
 {
     bool res = true;
     DWORD flags;

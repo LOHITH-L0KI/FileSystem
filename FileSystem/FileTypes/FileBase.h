@@ -4,7 +4,7 @@
 
 #include "Util.h"
 
-namespace Azul {
+namespace FileSystem {
 
 	class FileBase
 	{
@@ -22,6 +22,6 @@ namespace Azul {
 	};
 }
 
-using namespace Azul;
+using namespace FileSystem;
 
 #endif // !FILE_BASE_H

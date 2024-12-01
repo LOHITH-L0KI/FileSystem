@@ -1,7 +1,7 @@
 #include "FastWrite.h"
 
 
-Error Azul::FastWrite::Open(Handle& _fh, const char* const fileName, Mode mode) noexcept
+Error FileSystem::FastWrite::Open(Handle& _fh, const char* const fileName, Mode mode) noexcept
 {
 	Error res = Error::OPEN_FAIL;
 
@@ -27,7 +27,7 @@ Error Azul::FastWrite::Open(Handle& _fh, const char* const fileName, Mode mode) 
 	return res;
 }
 
-Error Azul::FastWrite::Close(Handle& _fh) noexcept
+Error FileSystem::FastWrite::Close(Handle& _fh) noexcept
 {
 	Error res = Error::CLOSE_FAIL;
 	FWHandler* fh = (FWHandler*)_fh;
@@ -61,7 +61,7 @@ Error Azul::FastWrite::Close(Handle& _fh) noexcept
 	return res;
 }
 
-Error Azul::FastWrite::Write(Handle _fh, const void* const buffer, const DWORD inSize) noexcept
+Error FileSystem::FastWrite::Write(Handle _fh, const void* const buffer, const DWORD inSize) noexcept
 {
 	Error res = Error::WRITE_FAIL;
 	FWHandler* fh = (FWHandler*)_fh;
@@ -88,7 +88,7 @@ Error Azul::FastWrite::Write(Handle _fh, const void* const buffer, const DWORD i
 	return res;;
 }
 
-Error Azul::FastWrite::Read(Handle _fh, void* const _buffer, const DWORD _size) noexcept
+Error FileSystem::FastWrite::Read(Handle _fh, void* const _buffer, const DWORD _size) noexcept
 {
 	Error res = Error::READ_FAIL;
 	FWHandler* fh = (FWHandler*)_fh;
@@ -109,21 +109,21 @@ Error Azul::FastWrite::Read(Handle _fh, void* const _buffer, const DWORD _size) 
 	return res;
 }
 
-Error Azul::FastWrite::Seek(Handle _fh, Position location, int offset) noexcept
+Error FileSystem::FastWrite::Seek(Handle _fh, Position location, int offset) noexcept
 {
 	//do nothing
 	//this is disabled
 	return Error();
 }
 
-Error Azul::FastWrite::Tell(Handle _fh, DWORD& offset) noexcept
+Error FileSystem::FastWrite::Tell(Handle _fh, DWORD& offset) noexcept
 {
 	//do nothing
 	//disabled
 	return Error();
 }
 
-Error Azul::FastWrite::Flush(Handle _fh) noexcept
+Error FileSystem::FastWrite::Flush(Handle _fh) noexcept
 {
 	Error res = Error::FLUSH_FAIL;
 	FWHandler* fh = (FWHandler*)_fh;
@@ -144,7 +144,7 @@ Error Azul::FastWrite::Flush(Handle _fh) noexcept
 	return res;
 }
 
-bool Azul::FastWrite::IsHandleValid(Handle _fh) noexcept
+bool FileSystem::FastWrite::IsHandleValid(Handle _fh) noexcept
 {
 	bool valid = false;
 	FWHandler* fh = (FWHandler*)_fh;
@@ -155,19 +155,19 @@ bool Azul::FastWrite::IsHandleValid(Handle _fh) noexcept
 	return valid;
 }
 
-std::ios::openmode Azul::FastWrite::privExtractFileAccessType(Mode mode)
+std::ios::openmode FileSystem::FastWrite::privExtractFileAccessType(Mode mode)
 {
 	std::ios::openmode fMode = std::ios::app;
 
 	switch (mode)
 	{
-	case Azul::Mode::READ:
+	case FileSystem::Mode::READ:
 		fMode = std::ios::out;
 		break;
-	case Azul::Mode::WRITE:
+	case FileSystem::Mode::WRITE:
 		fMode = std::ios::in;
 		break;
-	case Azul::Mode::READ_WRITE:
+	case FileSystem::Mode::READ_WRITE:
 		fMode = std::ios::in | std::ios::out;
 		break;
 	default:
@@ -178,19 +178,19 @@ std::ios::openmode Azul::FastWrite::privExtractFileAccessType(Mode mode)
 	return fMode;
 }
 
-std::ios::seek_dir Azul::FastWrite::privExtractMoveMethod(Position _pos)
+std::ios::seek_dir FileSystem::FastWrite::privExtractMoveMethod(Position _pos)
 {
 	std::ios_base::seek_dir seek = std::ios_base::cur;
 
 	switch (_pos)
 	{
-	case Azul::Position::BEGIN:
+	case FileSystem::Position::BEGIN:
 		seek = std::ios_base::beg;
 		break;
-	case Azul::Position::CURRENT:
+	case FileSystem::Position::CURRENT:
 		seek = std::ios_base::cur;
 		break;
-	case Azul::Position::END:
+	case FileSystem::Position::END:
 		seek = std::ios_base::end;
 		break;
 	default:

@@ -2,7 +2,7 @@
 #include "WinFileSlow.h"
 #include "FastWrite.h"
 
-FileBase* Azul::FileBase::GetInstance(FileType type)
+FileBase* FileSystem::FileBase::GetInstance(FileType type)
 {
 	FileBase* fb = nullptr;
 
